@@ -21,6 +21,7 @@
             <column name="email" type="VARCHAR(50)">
                 <constraints nullable="false" unique="true"/>
             </column>
+            <column name="photo_url" type="VARCHAR(100)"/>
             <column name="department_id" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="fk_person_department"
                              referencedTableName="department"
