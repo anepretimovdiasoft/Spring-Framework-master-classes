@@ -30,4 +30,33 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="2026-02-02--0002-username" author="anepretimov">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="person"/>
+            <not>
+                <columnExists tableName="person" columnName="username"/>
+            </not>
+        </preConditions>
+        <addColumn tableName="person">
+            <column name="username" type="VARCHAR(100)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="2026-02-02--0003-password" author="anepretimov">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="person"/>
+            <not>
+                <columnExists tableName="person" columnName="password"/>
+            </not>
+        </preConditions>
+        <addColumn tableName="person">
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+
 </databaseChangeLog>

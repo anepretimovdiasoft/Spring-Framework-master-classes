@@ -2,6 +2,7 @@ package ru.examle.edu.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Department {
     @Column(name = "name")
     private String name;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     private List<Person> people;
 }
