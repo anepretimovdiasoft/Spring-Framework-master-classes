@@ -1,5 +1,7 @@
 package ru.examle.edu.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import ru.examle.edu.dto.PersonDTO;
 import ru.examle.edu.dto.PersonRegisterDto;
 
@@ -17,4 +19,6 @@ public interface PersonService {
     void deletePerson(Long id);
 
     PersonDTO getPersonByUsername(String username);
+
+    Page<PersonDTO> getAllPersonPaginated(Pageable pageable);
 }
